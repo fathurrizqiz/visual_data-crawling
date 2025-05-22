@@ -6,6 +6,7 @@ import pandas as pd
 from collections import Counter
 import re
 from datetime import datetime
+from wordcloud import WordCloud
 
 # Stopwords bahasa Indonesia
 stopwords = set([
