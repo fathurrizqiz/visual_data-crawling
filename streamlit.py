@@ -6,7 +6,7 @@ import pandas as pd
 from collections import Counter
 import re
 from datetime import datetime
-
+import certifi
 
 # Stopwords bahasa Indonesia
 stopwords = set([
@@ -16,7 +16,10 @@ stopwords = set([
 ])
 
 # Koneksi MongoDB
-client = MongoClient("mongodb+srv://username:password@cluster0.mongodb.net/detik_com?retryWrites=true&w=majority")
+uri = "mongodb+srv://Fathur123:Fathur123@cluster0.sgncxie.mongodb.net/?retryWrites=true&w=majority"
+
+# Koneksi dengan sertifikat TLS
+client = MongoClient(uri, tlsCAFile=certifi.where())
 db = client["detik_com"]
 collection = db["crawling"]
 
