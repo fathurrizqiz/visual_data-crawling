@@ -16,9 +16,10 @@ stopwords = set([
 ])
 
 # Koneksi MongoDB
-client = MongoClient("mongodb+srv://username:password@cluster0.mongodb.net/detik_com.crawling")
-# db = client['tunawicara_db']
-# collection = client['crawling']
+client = MongoClient("mongodb+srv://username:password@cluster0.mongodb.net/detik_com?retryWrites=true&w=majority")
+db = client["detik_com"]
+collection = db["crawling"]
+
 
 # Fungsi untuk mengekstrak bulan dan tahun dari string
 def extract_month_year(date_str):
